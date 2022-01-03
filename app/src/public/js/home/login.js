@@ -20,5 +20,12 @@ function login() {
             "Content-Type": "application/json", //our data is in form of json
         },
         body: JSON.stringify(req),
-    }).then((res) => res.json().then((res) => console.log(res)));
+    }).then((res) => res.json()
+    .then((res) => {
+        if (res.success) {
+            location.href = "/";
+        } else {
+            alert(res.msg);
+        }
+    }));
 }

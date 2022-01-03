@@ -20,7 +20,7 @@ const process = {
             password = req.body.password;
 
         if (users.id.includes(id)) {
-            const idx = uses.id.indexOf(id);
+            const idx = users.id.indexOf(id);
             if (users.password[idx] == password) {
                 return res.json({
                     success: true,
@@ -30,7 +30,7 @@ const process = {
         return res.json({
             success: false,
             msg: "Failed to login",
-        });
+        }); 
     },
 };
 
